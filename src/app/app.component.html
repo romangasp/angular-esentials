@@ -1,12 +1,13 @@
-<h1 >
-    {{ title }}
-</h1>
-<app-colors></app-colors>
-<app-colors></app-colors>
-<app-colors></app-colors>
-<app-colors></app-colors>
-<app-colors></app-colors>
-<app-colors></app-colors>
+<h1>Task Manager</h1>
+<div [ngSwitch]="daysOfWeek">
+  <p class="item" *ngSwitchCase="'monday'">Drink coffee and work</p>
+  <p class="item" *ngSwitchCase="'tuesday'">I'm not marry and avoid boats"</p>
+  <p class="item" *ngSwitchCase="'wednesday'">Survive the longest day of the week</p>
+  <p class="item" *ngSwitchCase="'thursday'">Make a friday simulation</p>
+  <p class="item" *ngSwitchCase="'friday'">Update a social media</p>
+  <p *ngSwitchCase="13">---- 13 -----</p>
 
+  <p *ngSwitchDefault> Choose a day of week to know your destination</p>
+</div>
 
-<app-aleatorio></app-aleatorio>
+<input type="text" [(ngModel)]="daysOfWeek"/>
