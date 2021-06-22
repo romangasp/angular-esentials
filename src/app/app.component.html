@@ -1,12 +1,9 @@
 <h1 >
     {{ title }}
 </h1>
-<app-colors></app-colors>
-<app-colors></app-colors>
-<app-colors></app-colors>
-<app-colors></app-colors>
-<app-colors></app-colors>
-<app-colors></app-colors>
 
+<div class="square" [ngStyle]="{'background':color? color: 'peru'}">
 
-<app-aleatorio></app-aleatorio>
+</div>
+<button (click)="color = 'red'" [ngClass]="{'active': color == 'red'}"> Rojo</button>
+<button (click)="color = 'green'" [ngClass]="color">Verde</button>
