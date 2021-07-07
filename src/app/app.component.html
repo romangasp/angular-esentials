@@ -1,36 +1,4 @@
-<h1>
-  {{ title }}
-</h1>
+<app-header></app-header>
 
-<ul>
-  <li
-    *ngFor="
-      let book of books;
-      index as indexNumber;
-      first as isFirst;
-      last as isLast
-    "
-    [ngClass]="{blue: isFirst, green:isLast}"
-  >
-    {{ book.title }} - {{ book.author }} - {{ indexNumber }}
-    <span *ngIf="isLast"></span>
-  </li>
-</ul>
+<router-outlet></router-outlet>
 
-
-<ul>
-    <li *ngFor="
-      let book of books;
-    " >
-        <a href="https://www.google.com/search?q={{book.author}}">{{ book.title }} - {{ book.author }}</a>
-    </li>
-</ul>
-
-
-<ul>
-    <li *ngFor="
-      let book of books;
-    ">
-        <a (click)="showAuthor(book)">{{ book.title }} - {{ book.author }}</a>
-    </li>
-</ul>

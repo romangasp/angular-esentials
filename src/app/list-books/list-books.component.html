@@ -1,0 +1,40 @@
+<p>list-books works!</p>
+<ul>
+  <li *ngFor="
+      let book of books;
+      index as indexNumber;
+      first as isFirst;
+      last as isLast
+    " [ngClass]="{blue: isFirst, green:isLast}">
+    {{ book.title }} - {{ book.author }} - {{ indexNumber }}
+    <span *ngIf="isLast"></span>
+  </li>
+</ul>
+
+
+<ul>
+  <li *ngFor="
+      let book of books;
+    ">
+    <a href="https://www.google.com/search?q={{book.author}}">{{ book.title }} - {{ book.author }}</a>
+  </li>
+</ul>
+
+
+<ul>
+  <li *ngFor="
+      let book of books;
+    ">
+    <a (click)="showAuthor(book)">{{ book.title }} - {{ book.author }}</a>
+  </li>
+</ul>
+
+<div clas="container">
+<ul>
+  <li *ngFor="
+      let book of books
+    ">
+    <a (click)="addBooks(book)" [routerLink]="['/details', book.id]">{{ book.title }} - {{ book.author }}</a>
+  </li>
+</ul>
+</div> 

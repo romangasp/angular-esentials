@@ -1,0 +1,21 @@
+<div class="container">
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/']">Home</a></li>
+        <li><a [routerLink]="['/list-books']">Books List</a></li>
+        <li><a [routerLink]="['/about']" routerLinkActive="active">About of</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="jumbotron">
+    <button class="glyphicon glyphicon-book show-books" (click)="showList = !showList">Books</button>
+    <div class="my-books" *ngIf="showList">
+      <h2> My Books</h2>
+    <ul *ngIf="selectedBooks.showBooks()">
+      <li *ngFor="let book of selectedBooksHeader">{{book.title}}</li>
+    </ul> </div>
+    <h1>Books Club</h1>
+  </div>
+</div>
